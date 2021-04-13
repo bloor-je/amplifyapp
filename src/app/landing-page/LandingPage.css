@@ -1,0 +1,56 @@
+.landing-page {
+  text-align: center;
+}
+
+.landing-page-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .landing-page-logo {
+    animation: landing-page-logo-spin infinite 20s linear;
+  }
+}
+
+.landing-page-header {
+    min-height: 8vh;
+}
+
+.landing-page-body {
+    min-height: 92vh;
+    background: url(../../images/spices.jpeg);
+}
+
+.landing-page-body p {
+    margin: 0;
+    padding: 0 10%;
+    color: #ffff;
+    font-size: 20pt;
+    font-weight: 600;
+    font-style: oblique;
+    padding-top: 20%;
+}
+.landing-page-body .title-class {
+    font-size: 40pt;
+    padding: 0;
+    padding-top:3%;
+}
+.welcome-text-wrapper{
+    height: 92vh;
+    width:100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.landing-page-link {
+    color: #61dafb;
+}
+
+@keyframes landing-page-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

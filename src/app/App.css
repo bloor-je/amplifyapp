@@ -1,0 +1,15 @@
+/* Any generic CSS for the main App, this should be lightweight as most css should live within folders*/
+.app{
+    text-align: center;
+}
+
+.app-header {
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
