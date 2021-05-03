@@ -14,7 +14,7 @@
     top: 0.5%;
     position: absolute;
     left: 8px;
-    height: 5%;
+    height: 5vh;
 }
 
 .rotate-open {
@@ -36,13 +36,15 @@
     float: left;
     margin-left: 6%;
     border-radius: 5px;
-    height: 8vh;
+    height: 6vh;
     width: 93%;
     animation: fade-in-opacity 1s;
 }
 
 .list {
-    list-style-type:none;
+    list-style-type: none;
+    height: 100%;
+    margin: 0;
 }
 
 .list-item {
