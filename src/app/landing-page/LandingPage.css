@@ -14,22 +14,22 @@
 }
 
 .landing-page-header {
-    min-height: 8vh;
+    height:6%;
 }
 
 .landing-page-body {
-    min-height: 92vh;
+    height: 94%;
     background: url(../../images/spices.jpg);
 }
 
 .landing-page-body p {
     margin: 0;
-    padding: 0 10%;
+    padding: 0 17%;
     color: #ffff;
     font-size: 20pt;
     font-weight: 600;
     font-style: oblique;
-    padding-top: 20%;
+    padding-top: 15%;
 }
 .landing-page-body .title-class {
     font-size: 40pt;
@@ -37,7 +37,7 @@
     padding-top:3%;
 }
 .welcome-text-wrapper{
-    height: 92vh;
+    height: 100%;
     width:100%;
     background: rgba(0,0,0,0.5);
 }
