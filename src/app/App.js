@@ -1,19 +1,17 @@
 import './App.css';
-import LandingPage from './landing-page/LandingPage';
-import Menu from './menu/Menu';
+import AppWrapper from './app-wrapper/appWrapper';
 import React from 'react';
 
 
 /**
- * Main Application class, controls which page is displayed, called from index.js
+ * Main Application rendering function, only holds wrapper class which controls main display
  */
 function App() {
 
     //add a landing page and menu
     const appJSX =(
         <React.StrictMode>
-            <Menu />
-            <LandingPage />
+            <AppWrapper/>
         </React.StrictMode>
         );
 

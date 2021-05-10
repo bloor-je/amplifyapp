@@ -15,7 +15,7 @@ class Menu extends React.Component {
 
         // This binding is necessary to make `this` work in the callback
         this.handleClick = this.handleClick.bind(this);
-        this.handleMenuClick = this.handleMenuClick.bind(this);
+        this.changePage = this.changePage.bind(this);
     }
 
     //function called when menu icon is clicked on
@@ -25,11 +25,9 @@ class Menu extends React.Component {
         }));
     }
 
-    //function called when the open menu is clicked on
-   handleMenuClick() {
-        this.handleClick();
-
-        //set page here
+    //function called when one of the pages in the menu is selected
+    changePage(pageName) {
+        this.props.changeWebsitePage(pageName); //this is a callback to app-wrapper.js
     }
 
     //JSX rendering
@@ -43,11 +41,11 @@ class Menu extends React.Component {
                         src={menuImg} />
                 </div> 
                 <div testid="menuList" className={this.state.menuOpen ? "navigation-menu" : "no-display"}>
-                    <ul onClick={this.handleMenuClick} className="list">
-                        <li className="list-item" style={{ width: this.state.itemWidth }}><span>Home</span></li>
-                        <li className="list-item" style={{ width: this.state.itemWidth }}><span>Page 1</span></li>
-                        <li className="list-item" style={{ width: this.state.itemWidth }}><span>Page 2</span></li>
-                        <li className="list-item" style={{ width: this.state.itemWidth }}><span>Page 3</span></li>
+                    <ul className="list">
+                        <li className="list-item" style={{ width: this.state.itemWidth }} onClick={() => this.changePage("home")}><span>Home</span></li>
+                        <li className="list-item" style={{ width: this.state.itemWidth }} onClick={() => this.changePage("1")}><span>Page 1</span></li>
+                        <li className="list-item" style={{ width: this.state.itemWidth }} onClick={() => this.changePage("2")}><span>Page 2</span></li>
+                        <li className="list-item" style={{ width: this.state.itemWidth }} onClick={() => this.changePage("3")}><span>Page 3</span></li>
                     </ul>
                 </div>
              </div>
