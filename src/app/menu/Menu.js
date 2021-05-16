@@ -28,6 +28,7 @@ class Menu extends React.Component {
     //function called when one of the pages in the menu is selected
     changePage(pageName) {
         this.props.changeWebsitePage(pageName); //this is a callback to app-wrapper.js
+        this.handleClick(); //close menu when page selected
     }
 
     //JSX rendering

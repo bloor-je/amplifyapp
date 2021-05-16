@@ -5,13 +5,34 @@
 }
 
 .indian-page-body {
-
+    height: 94vh;
+    overflow-y: hidden;
 }
 
-.page-one{
-
+.page-one {
+    height: 100%;
 }
 
-.page-two{
+.page-two {
+    height: 100%;
+}
 
+.page-three {
+    height: 100%;
+}
+
+.page-four {
+    height: 100%;
+}
+
+.next-page-button {
+    position: absolute;
+    top: 95vh;
+    left: 50vw;
+}
+
+.prev-page-button {
+    position: absolute;
+    top: 7vh;
+    left: 50vw;
 }

@@ -3,11 +3,14 @@
     "",
     "\\public",
     "\\src",
+    "\\src\\app",
+    "\\src\\app\\app-wrapper",
+    "\\src\\app\\indian",
     "\\src\\app\\landing-page",
     "\\src\\app\\menu",
     "\\src\\external",
     "\\src\\images"
   ],
-  "SelectedNode": "\\src\\index.css",
+  "SelectedNode": "\\src\\app\\indian\\indian.js",
   "PreviewInSolutionExplorer": false
 }
