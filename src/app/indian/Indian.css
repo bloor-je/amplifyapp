@@ -9,20 +9,21 @@
     overflow-y: hidden;
 }
 
+.page {
+    background-color: #000000e0;
+    height:100%;
+}
+
 .page-one {
-    height: 100%;
 }
 
 .page-two {
-    height: 100%;
 }
 
 .page-three {
-    height: 100%;
 }
 
 .page-four {
-    height: 100%;
 }
 
 .next-page-button {

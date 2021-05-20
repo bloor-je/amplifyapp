@@ -1,5 +1,6 @@
 import LandingPage from '../landing-page/LandingPage';
 import Indian from '../indian/Indian';
+import ConstructionPage from '../under-construction/UnderConstruction';
 import Menu from '../menu/Menu';
 import React from 'react';
 
@@ -31,13 +32,13 @@ class AppWrapper extends React.Component {
                 activePage = <LandingPage />;
                 break;
             case "indian":
-                activePage = <Indian />; //ToDo replace with page 2 etc
+                activePage = <Indian />; 
                 break;
             case "italian":
-                activePage = <LandingPage />;
+                activePage = <ConstructionPage />;
                 break;
             case "thai":
-                activePage = <LandingPage />;
+                activePage = <ConstructionPage />;
                 break;
             default:
                 break;

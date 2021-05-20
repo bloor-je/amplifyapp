@@ -1,0 +1,50 @@
+/* CSS file for the construction place holder page*/
+
+.construction-home-page-wrapper {
+}
+
+.construction-page-body {
+    height: 94vh;
+    overflow-y: hidden;
+}
+
+.page {
+    background-color: #000000cc;
+    height: 100%;
+    padding: 10%;
+}
+
+.inner-page-container {
+    height: 65%;
+    background-color: #ffffff;
+    color: black;
+    border-radius: 25px;
+    font-size: 5vw;
+    text-align: center;
+    padding-top: 5vh;
+}
+
+.title {
+    font-size: 5vw;
+    font-style: oblique;
+    font-weight: 600;
+}
+
+.body-container {
+    margin-top: 6%;
+}
+
+.body {
+    font-size: 3vw;
+    display: table-row;
+    font-style: oblique;
+    font-weight: 400;
+}
+
+.image-wrapper {
+    border-radius: 5px;
+    height: 15vw;
+    margin-top: 3vw;
+    margin-left: 2%;
+    margin-right: 2%;
+}

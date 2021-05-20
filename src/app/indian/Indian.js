@@ -19,19 +19,19 @@ class Indian extends React.Component {
         this.nextPageButton = <div className="next-page-button"><button onClick={() => this.nextPage()}>N</button></div>;
         this.prevPageButton = <div className="prev-page-button"><button onClick={() => this.prevPage()}>P</button></div>;
 
-        this.innerPage1 = <div className="page-one">
+        this.innerPage1 = <div className="page page-one">
             <span>Choose Base Recipe</span>
         </div>;
 
-        this.innerPage2 = <div className="page-two">
+        this.innerPage2 = <div className="page page-two">
             <span>Personalise</span>
         </div>;
 
-        this.innerPage3 = <div className="page-two">
+        this.innerPage3 = <div className="page page-two">
             <span>Check Ingredients</span>
         </div>;
 
-        this.innerPage4 = <div className="page-two">
+        this.innerPage4 = <div className="page page-two">
             <span>Cook!</span>
         </div>;
 
