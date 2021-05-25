@@ -4,14 +4,43 @@
 
 }
 
+
 .indian-page-body {
     height: 94vh;
-    overflow-y: hidden;
 }
 
 .page {
-    background-color: #000000e0;
-    height:100%;
+    background: linear-gradient( 45deg, black, grey);
+    height: 100%;
+}
+
+.inner-page-container {
+    height: 75%;
+    width: 85%;
+    display: inline-block;
+    background-color: #ffffff;
+    color: black;
+    border-radius: 25px;
+    text-align: center;
+    padding: 2vw;
+    margin: 5%;
+}
+
+.title {
+    font-size: 6vh;
+    font-style: oblique;
+    font-weight: 600;
+}
+
+.body-container {
+    margin-top: 6%;
+}
+
+.body {
+    font-size: 4vh;
+    display: table-row;
+    font-style: oblique;
+    font-weight: 400;
 }
 
 .page-one {

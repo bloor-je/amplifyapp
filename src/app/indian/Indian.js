@@ -13,7 +13,7 @@ class Indian extends React.Component {
         super(props);
 
         this.title = "Indian Cuisine";
-        this.recipes = ["Murgh Hydrabadhi", "Chicken Tikka Balti", "Saag Gosht"];
+        this.recipes = ["Hydrabadhi", "Tikka Balti", "Gosht"];
         this.numPages = 4;
 
         this.nextPageButton = <div className="next-page-button"><button onClick={() => this.nextPage()}>N</button></div>;
@@ -43,6 +43,7 @@ class Indian extends React.Component {
         this.prevPage = this.prevPage.bind(this);
         this.setInnerPage = this.setInnerPage.bind(this);
         this.getActiveInnerPage = this.getActiveInnerPage.bind(this);
+        this.buildInnerPageContent = this.buildInnerPageContent.bind(this);
     }
 
     //callback function called when user wants to move to next inner page
@@ -64,7 +65,7 @@ class Indian extends React.Component {
         }));
     }
 
-    //function called from the jsx to retrieve the active page
+    //Function called from the jsx to retrieve the active page
     getActiveInnerPage() {
         let activeInnerPage = this.innerPage1;
         switch (this.state.innerPage) {
@@ -86,12 +87,26 @@ class Indian extends React.Component {
         return activeInnerPage;
     }
 
+    //Function to produce the content for the inner page container
+    buildInnerPageContent(page) {
+
+        //TODO here build content and append to page object
+//        let innerPageContainer = <div className="inner-page-container">
+ //           <span className="title">{pageTitle}</span>
+  //          <div className="body-container">
+  //              <span className="body">{pageText}</span>
+   //         </div>
+    //    </div>
+
+        return page;
+    }
+
     //main function for rendering the display of this page 
     render() {
         let innerPage = this.getActiveInnerPage();
         let nextPageButton = (this.state.innerPage > 3) ? <div></div> : this.nextPageButton;
         let prevPageButton = (this.state.innerPage < 2) ? <div></div> : this.prevPageButton;
-
+        innerPage = this.buildInnerPageContent(innerPage);
         const jsx = (
             <div className="indian-home-page-wrapper height-100">
                 <header className="landing-page-header">

@@ -5,27 +5,27 @@
 
 .construction-page-body {
     height: 94vh;
-    overflow-y: hidden;
 }
 
 .page {
-    background-color: #000000cc;
+    background: linear-gradient( 45deg, black, grey);
     height: 100%;
-    padding: 10%;
 }
 
 .inner-page-container {
-    height: 65%;
+    height: 75%;
+    width: 85%;
+    display: inline-block;
     background-color: #ffffff;
     color: black;
     border-radius: 25px;
-    font-size: 5vw;
     text-align: center;
-    padding-top: 5vh;
+    padding: 2vw;
+    margin: 5%;
 }
 
 .title {
-    font-size: 5vw;
+    font-size: 6vh;
     font-style: oblique;
     font-weight: 600;
 }
@@ -35,7 +35,7 @@
 }
 
 .body {
-    font-size: 3vw;
+    font-size: 4vh;
     display: table-row;
     font-style: oblique;
     font-weight: 400;
@@ -43,8 +43,9 @@
 
 .image-wrapper {
     border-radius: 5px;
-    height: 15vw;
-    margin-top: 3vw;
-    margin-left: 2%;
-    margin-right: 2%;
+    height: 17vw;
+    max-height: 220px;
+    margin-top: 4vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
 }
