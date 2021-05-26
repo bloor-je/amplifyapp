@@ -9,9 +9,9 @@ class LandingPage extends React.Component {
 
     constructor(props) {
         super(props);
-        const title = "Wecome to Custom Recipes!";
+        const title = "Wecome to Flexi Food!";
 
-        const welcomeText = "Custom Recipes allows a user to take a base" +
+        const welcomeText = "Flexi Food allows you to take a" +
             " recipe and use some simple tools to customise the ingredients and method, based on " +
             "personal preferences, allergies, number of guests" +
             " or produce availability. The recipes included cover a range of cuisines and cultures. Enjoy!"
