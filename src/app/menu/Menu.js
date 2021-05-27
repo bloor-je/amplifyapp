@@ -43,10 +43,10 @@ class Menu extends React.Component {
                 </div> 
                 <div testid="menuList" className={this.state.menuOpen ? "navigation-menu" : "no-display"}>
                     <ul className="list">
-                        <li className="list-item" style={{ width: this.state.itemWidth }} onClick={() => this.changePage("home")}><span>Home</span></li>
-                        <li className="list-item" style={{ width: this.state.itemWidth }} onClick={() => this.changePage("indian")}><span>Indian</span></li>
-                        <li className="list-item" style={{ width: this.state.itemWidth }} onClick={() => this.changePage("italian")}><span>Italian</span></li>
-                        <li className="list-item" style={{ width: this.state.itemWidth }} onClick={() => this.changePage("thai")}><span>Thai</span></li>
+                        <li className="list-item" onClick={() => this.changePage("home")}><span>Home</span></li>
+                        <li className="list-item" onClick={() => this.changePage("indian")}><span>Indian</span></li>
+                        <li className="list-item" onClick={() => this.changePage("italian")}><span>Italian</span></li>
+                        <li className="list-item" onClick={() => this.changePage("thai")}><span>Thai</span></li>
                     </ul>
                 </div>
              </div>

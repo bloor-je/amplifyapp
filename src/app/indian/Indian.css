@@ -1,20 +1,19 @@
 /* CSS file for the indian cuisine page*/
 
-.indian-home-page-wrapper{
+.i-home-page-wrapper{
 
 }
 
-
-.indian-page-body {
+.i-page-body {
     height: 94vh;
 }
 
-.page {
-    background: linear-gradient( 45deg, black, grey);
+.i-page {
+    background: url(../../images/spices.jpg);
     height: 100%;
 }
 
-.inner-page-container {
+.i-inner-page-container {
     height: 75%;
     width: 85%;
     display: inline-block;
@@ -26,43 +25,63 @@
     margin: 5%;
 }
 
-.title {
+/** Styling for the inner page i.e. the big white blob*/
+.i-inner-page-body-container {
+    margin-top: 6%;
+    width: 80%;
+    height: 75%;
+    display: inline-block;
+}
+
+.i-inner-page-body {
+    width: 100%;
+    height:100%;
+}
+
+.i-inner-page-title {
     font-size: 6vh;
     font-style: oblique;
     font-weight: 600;
 }
 
-.body-container {
-    margin-top: 6%;
+.i-recipe-selector {
+    width: 100%;
+    height: 100%;
 }
 
-.body {
+.i-recipe-options {
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.i-recipe-option {
+    float: left;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    text-align: center;
     font-size: 4vh;
-    display: table-row;
-    font-style: oblique;
-    font-weight: 400;
+    font-family: ui-serif;
+    width: 33%;
 }
 
-.page-one {
+    .i-recipe-option:hover {
+        border-radius: 5px;
+        background-color: #c0b5b54f;
+        cursor: grab;
+    }
+
+.i-next-page-button {
+    position: relative;
+    top: 50%;
+    float: right;
 }
 
-.page-two {
-}
-
-.page-three {
-}
-
-.page-four {
-}
-
-.next-page-button {
-    position: absolute;
-    top: 95vh;
-    left: 50vw;
-}
-
-.prev-page-button {
-    position: absolute;
-    top: 7vh;
-    left: 50vw;
+.i-prev-page-button {
+    position: relative;
+    top: 50%;
+    float: left;
 }

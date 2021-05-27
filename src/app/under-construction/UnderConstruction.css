@@ -1,18 +1,18 @@
 /* CSS file for the construction place holder page*/
 
-.construction-home-page-wrapper {
+.uc-home-page-wrapper {
 }
 
-.construction-page-body {
+.uc-page-body {
     height: 94vh;
 }
 
-.page {
-    background: linear-gradient( 45deg, black, grey);
+.uc-page {
+    background: url(../../images/spices.jpg);
     height: 100%;
 }
 
-.inner-page-container {
+.uc-inner-page-container {
     height: 75%;
     width: 85%;
     display: inline-block;
@@ -24,24 +24,24 @@
     margin: 5%;
 }
 
-.title {
+.uc-title {
     font-size: 6vh;
     font-style: oblique;
     font-weight: 600;
 }
 
-.body-container {
+.uc-body-container {
     margin-top: 6%;
 }
 
-.body {
+.uc-body {
     font-size: 4vh;
     display: table-row;
     font-style: oblique;
     font-weight: 400;
 }
 
-.image-wrapper {
+.uc-image-wrapper {
     border-radius: 5px;
     height: 17vw;
     max-height: 220px;

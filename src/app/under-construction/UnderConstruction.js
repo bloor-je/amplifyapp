@@ -16,14 +16,14 @@ class ConstructionPage extends React.Component {
     constructor(props) {
         super(props);
 
-        this.innerPage1 = <div className="page page-one">
-            <div className="inner-page-container">
-                <span className="title">Sorry This Page is Still Being Built!</span>
-                <div className="body-container">
-                    <span className="body">Please use the menu in the top left corner to access a different cuisine page for more delicious recipes!</span>
-                    <img className="image-wrapper" alt="herbs" src={herbs} />
-                    <img className="image-wrapper" alt="Curry" src={curry} />
-                    <img className="image-wrapper" alt="pasta" src={pasta} />
+        this.innerPage1 = <div className="uc-page page-one">
+            <div className="uc-inner-page-container">
+                <span className="uc-title">Sorry This Page is Still Being Built!</span>
+                <div className="uc-body-container">
+                    <span className="uc-body">Please use the menu in the top left corner to access a different cuisine page for more delicious recipes!</span>
+                    <img className="uc-image-wrapper" alt="herbs" src={herbs} />
+                    <img className="uc-image-wrapper" alt="Curry" src={curry} />
+                    <img className="uc-image-wrapper" alt="pasta" src={pasta} />
                 </div>
             </div>
         </div>;
@@ -34,10 +34,10 @@ class ConstructionPage extends React.Component {
         let innerPage = this.innerPage1;
 
         const jsx = (
-            <div className="construction-home-page-wrapper height-100">
+            <div className="uc-home-page-wrapper height-100">
                 <header className="landing-page-header">
                 </header>
-                <div className="construction-page-body">
+                <div className="uc-page-body">
                     {innerPage}
                 </div>
             </div>
