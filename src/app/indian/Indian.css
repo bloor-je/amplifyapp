@@ -17,8 +17,8 @@
     height: 75%;
     width: 85%;
     display: inline-block;
-    background-color: #ffffff;
-    color: black;
+    background-color: black;
+    color: #e2d077;
     border-radius: 25px;
     text-align: center;
     padding: 2vw;
@@ -44,6 +44,10 @@
     font-weight: 600;
 }
 
+.i-inner-page-title-container{
+
+}
+
 .i-recipe-selector {
     width: 100%;
     height: 100%;
@@ -63,9 +67,11 @@
     border-radius: 5px;
     margin-bottom: 5px;
     text-align: center;
-    font-size: 4vh;
+    font-size: 5vh;
     font-family: ui-serif;
-    width: 33%;
+    width: 100%;
+    margin-bottom: 5vh;
+    min-width: fit-content;
 }
 
     .i-recipe-option:hover {
@@ -74,14 +80,51 @@
         cursor: grab;
     }
 
+.i-recipe-selected {
+    border: 3px solid #13ba47;
+}
+
 .i-next-page-button {
     position: relative;
     top: 50%;
     float: right;
 }
 
+    .i-next-page-button button {
+        color: black;
+        background-color: green;
+        border-radius: 10px;
+        text-shadow: none;
+        right: 0vw;
+        width: fit-content;
+        height: fit-content;
+        font-size: 4vw;
+    }
+
+        .i-next-page-button button:hover {
+            border: 1px solid yellow;
+        }
+
 .i-prev-page-button {
     position: relative;
     top: 50%;
     float: left;
+}
+
+    .i-prev-page-button button {
+        color: black;
+        background-color: #850909;
+        text-shadow: none;
+        border-radius: 10px;
+        width: fit-content;
+        height: fit-content;
+        font-size: 4vw;
+    }
+
+        .i-prev-page-button button:hover {
+            border: 1px solid yellow;
+        }
+
+.i-placeholder-button{
+    z-index: -1;
 }
