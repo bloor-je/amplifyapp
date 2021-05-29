@@ -53,6 +53,8 @@ class Indian extends React.Component {
         this.recipes = [hydrabadhi, saag, tikkaBalti];
         this.numPages = 4;
 
+        this.maxServingSize = 10;
+
         this.nextPageButton = <div className="i-next-page-button"><button className="fa fa-long-arrow-right" onClick={() => this.nextPage()}></button></div>;
         this.prevPageButton = <div className="i-prev-page-button"><button className="fa fa-long-arrow-left"  onClick={() => this.prevPage()}></button></div>;
         this.prevPageButtonPlaceHolder = <div className="i-prev-page-button i-placeholder-button"><button className="fa fa-long-arrow-left"></button></div>;
@@ -158,9 +160,11 @@ class Indian extends React.Component {
             case "method":
                 pageContents = this.buildMethod(pageContents);
                 break;
+            default:
+                break;
         }
 
-        let nextPageButton = (this.state.innerPage > 3) ? this.prevPageButtonPlaceHolder : this.nextPageButton;
+        let nextPageButton = (this.state.innerPage > this.numPages-1) ? this.nextPageButtonPlaceHolder : this.nextPageButton;
         let prevPageButton = (this.state.innerPage < 2) ? this.prevPageButtonPlaceHolder : this.prevPageButton;
 
         let innerPageContainer = <div className="i-inner-page-container">
@@ -198,7 +202,25 @@ class Indian extends React.Component {
 
     //Funciton to build the inner page for Tools to edit recipe
     buildRecipeTools(pageContents) {
-        let numPeopleTool = ""
+
+        //tool for serving size
+        let servingSizeOptions = [];
+        for (let i = 0; i < this.maxServingSize; i++) {
+            servingSizeOptions.push(<option key={i+1}>{i + 1}</option>);
+        }
+
+        let numPeopleTool = <div><span>Servings: </span><select>
+            {servingSizeOptions}
+        </select></div>
+
+        //tool for heat
+
+
+        //tool for allergies?
+
+
+        //tool for dry vs creamy
+
             
         pageContents = <div className="i-recipe-selector">
             <ul className="i-recipe-options">
