@@ -2,6 +2,7 @@ import './Indian.css';
 import '../../index.css';
 import '../landing-page/LandingPage.css';
 import '../../external/font-awesome/font-awesome.min.css'
+import Slider from '../slider/Slider'
 import React from 'react';
 
 /**
@@ -82,7 +83,8 @@ class Indian extends React.Component {
 
         //put inner page on state so that it re renders the screen if this changes
         this.state = {
-            innerPage: 1, selectedRecipe: {"name": ""} };
+            innerPage: 1, selectedRecipe: { "name": "" }, dairyFree: false, glutenFree: false, vegetarian: false
+        };
 
         // This binding is necessary to make `this` work in the callback
         this.nextPage = this.nextPage.bind(this);
@@ -92,6 +94,7 @@ class Indian extends React.Component {
         this.buildHydrabadhiMethod = this.buildHydrabadhiMethod.bind(this);
         this.buildInnerPageContainer = this.buildInnerPageContainer.bind(this);
         this.recipeSelected = this.recipeSelected.bind(this);
+        this.sliderChanged = this.sliderChanged.bind(this);
     }
 
     //callback function called when user wants to move to next inner page
@@ -170,12 +173,14 @@ class Indian extends React.Component {
         let innerPageContainer = <div className="i-inner-page-container">
             {prevPageButton}
             {nextPageButton}
-            <div className="i-inner-page-title-container">
-                <span className="i-inner-page-title">{pageTitle}</span>
+            <div>
+                <div className="i-inner-page-title-container">
+                    <span className="i-inner-page-title">{pageTitle}</span>
+                </div>
+                <div className="i-inner-page-body-container">
+                    <div className="i-inner-page-body">{pageContents}</div>
+                </div>
             </div>
-            <div className="i-inner-page-body-container">
-               <div className="i-inner-page-body">{pageContents}</div>
-           </div>
         </div>;
 
         return innerPageContainer;
@@ -214,21 +219,55 @@ class Indian extends React.Component {
         </select></div>
 
         //tool for heat
+        let heatTool = <Slider sliderColour="red" sliderName="curryHeat" sliderDisplayTag="Heat:" sliderChanged={this.sliderChanged} />;
 
-
-        //tool for allergies?
-
+        //checkboxes
+        let dairyFree = this.buildCheckbox(this.state.dairyFree, "dairyCheckbox", "Dairy Free: ");
+        let vegetarian = this.buildCheckbox(this.state.vegetarian, "vegetarianCheckbox", "Vegetarian:  ");
+        let glutenFree = this.buildCheckbox(this.state.glutenFree, "glutenCheckbox", "Gluten Free: ");
+        let checkboxes = <div className="i-check-box-container">
+            {vegetarian}
+            {dairyFree}
+            {glutenFree}
+        </div>;
 
         //tool for dry vs creamy
+        let creaminessTool = <Slider sliderName="curryCreaminess" sliderDisplayTag="Creaminess:" sliderChanged={this.sliderChanged} />;
 
             
         pageContents = <div className="i-recipe-selector">
             <ul className="i-recipe-options">
                 {numPeopleTool}
+                {heatTool}
+                {creaminessTool}
+                {checkboxes}
             </ul>
         </div>;
 
         return pageContents;
+    }
+
+    /**
+     * Function to build a checkbox as JSX
+     * @param val the value of the checkbox, true or false
+     * @param id the id of the checkbox 
+     * @param tag the tag to display next to the checkbox
+    */
+    buildCheckbox(val, id, tag) {
+        let checkBox = <div>
+            <label for={id} >
+                <span>{tag} </span>
+            </label>
+            <input id={id} type="checkbox" vlaue={val} />
+        </div>;
+
+        return checkBox;
+    }
+
+    //Function called when a slider declared on this page changes value
+    sliderChanged(sliderValue, sliderName) {
+        console.log(sliderValue);
+        console.log(sliderName);
     }
 
     //Function to build the inner page to allow user to alter the ingredients
