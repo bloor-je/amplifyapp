@@ -280,11 +280,20 @@ class Indian extends React.Component {
         this.setState(state => ({
             [sliderName]: Number(sliderValue)
         }));
-        console.log(this.state);
     }
 
     //Function to build the inner page to allow user to alter the ingredients
     buildIngredientsEditor(pageContents) {
+
+        let recipe = null;
+        const selectedRecipe = this.state.selectedRecipe;
+        this.recipes.forEach(function (recipeT) {
+            if (recipeT.name === selectedRecipe.name) {
+                recipe = recipeT;
+            }
+        })
+    
+        console.log(recipe);
         let ingredients = ""
 
         pageContents = <div className="i-recipe-selector">
