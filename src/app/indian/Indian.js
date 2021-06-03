@@ -83,7 +83,8 @@ class Indian extends React.Component {
 
         //put inner page on state so that it re renders the screen if this changes
         this.state = {
-            innerPage: 1, selectedRecipe: { "name": "" }, dairyFree: false, glutenFree: false, vegetarian: false
+            innerPage: 1, selectedRecipe: { "name": "" }, dairyFree: false, glutenFree: false, vegetarian: false,
+            creaminess: 50, heat: 50
         };
 
         // This binding is necessary to make `this` work in the callback
@@ -95,6 +96,7 @@ class Indian extends React.Component {
         this.buildInnerPageContainer = this.buildInnerPageContainer.bind(this);
         this.recipeSelected = this.recipeSelected.bind(this);
         this.sliderChanged = this.sliderChanged.bind(this);
+        this.toggleCheckbox = this.toggleCheckbox.bind(this);
     }
 
     //callback function called when user wants to move to next inner page
@@ -219,12 +221,12 @@ class Indian extends React.Component {
         </select></div>
 
         //tool for heat
-        let heatTool = <Slider sliderColour="red" sliderName="curryHeat" sliderDisplayTag="Heat:" sliderChanged={this.sliderChanged} />;
+        let heatTool = <Slider sliderName="heat" sliderDisplayTag="Heat:" sliderChanged={this.sliderChanged} defaultValue={ this.state.heat}/>;
 
         //checkboxes
-        let dairyFree = this.buildCheckbox(this.state.dairyFree, "dairyCheckbox", "Dairy Free: ");
-        let vegetarian = this.buildCheckbox(this.state.vegetarian, "vegetarianCheckbox", "Vegetarian:  ");
-        let glutenFree = this.buildCheckbox(this.state.glutenFree, "glutenCheckbox", "Gluten Free: ");
+        let dairyFree = this.buildCheckbox(this.state.dairyFree, "dairyFree", "Dairy Free: ");
+        let vegetarian = this.buildCheckbox(this.state.vegetarian, "vegetarian", "Vegetarian:  ");
+        let glutenFree = this.buildCheckbox(this.state.glutenFree, "glutenFree", "Gluten Free: ");
         let checkboxes = <div className="i-check-box-container">
             {vegetarian}
             {dairyFree}
@@ -232,7 +234,7 @@ class Indian extends React.Component {
         </div>;
 
         //tool for dry vs creamy
-        let creaminessTool = <Slider sliderName="curryCreaminess" sliderDisplayTag="Creaminess:" sliderChanged={this.sliderChanged} />;
+        let creaminessTool = <Slider sliderName="creaminess" sliderDisplayTag="Creaminess:" sliderChanged={this.sliderChanged} defaultValue={this.state.creaminess}/>;
 
             
         pageContents = <div className="i-recipe-selector">
@@ -255,19 +257,30 @@ class Indian extends React.Component {
     */
     buildCheckbox(val, id, tag) {
         let checkBox = <div>
-            <label for={id} >
+            <label>
                 <span>{tag} </span>
             </label>
-            <input id={id} type="checkbox" vlaue={val} />
+            <input name={id} id={id} type="checkbox" checked={val} onChange={this.toggleCheckbox} />
         </div>;
 
         return checkBox;
     }
 
+    //Function called when a checkbox has been toggled on the page
+    toggleCheckbox(event) {
+        const name = event.target.name;
+        const val = event.target.checked;
+        this.setState(state => ({
+            [name]: val
+        }));
+    }
+
     //Function called when a slider declared on this page changes value
     sliderChanged(sliderValue, sliderName) {
-        console.log(sliderValue);
-        console.log(sliderName);
+        this.setState(state => ({
+            [sliderName]: Number(sliderValue)
+        }));
+        console.log(this.state);
     }
 
     //Function to build the inner page to allow user to alter the ingredients

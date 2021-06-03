@@ -9,7 +9,7 @@ class Slider extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {value:50};
+        this.state = { value: this.props.defaultValue};
 
         // This binding is necessary to make `this` work in the callback
         this.sliderChange = this.sliderChange.bind(this);
