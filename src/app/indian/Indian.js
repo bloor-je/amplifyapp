@@ -2,6 +2,7 @@ import './Indian.css';
 import '../../index.css';
 import '../landing-page/LandingPage.css';
 import '../../external/font-awesome/font-awesome.min.css'
+import hydrabadhiJson from './recipes/hydrabadhi.json'
 import Slider from '../slider/Slider'
 import React from 'react';
 
@@ -16,38 +17,7 @@ class Indian extends React.Component {
 
         this.title = "Indian Cuisine";
 
-        let hydrabadhi = {
-            "name": "Hydrabadhi",
-            "brief": "A delicious creamy curry from the hydrabadhi region, made with a selection of ground spices and aromatics",
-            "cookingTime": "2h",
-            "defaultServingSize": 2,
-            "accompniment": "Chapattis or Garlic and Coriander Naan",
-            "ingredients": [{ "name": "Double Cream", "amount": "200ml", "swaps": [{ "Creme Fraische": "200ml" }, { "Milk": "100ml" }], "id": "cream" },
-            { "name": "Natural Yoghurt", "amount": "100ml", "swaps": [], "id": "yog" },
-            { "name": "Brown Onion", "amount": "1", "swaps": [{ "Shalotts": "4" }, { "Red Onion": "1" }], "id": "onion" },
-            { "name": "Tomatos", "amount": "4", "swaps": [{ "Tinned Tomatos": "400ml" }], "id": "tomatos" },
-            { "name": "Fresh Garlic", "amount": "6 Cloves", "swaps": [{ "Garlic Paste": "1 tblsp" }, { "Garlic Powder": "1/2 tblsp" }], "id": "garlic" },
-            { "name": "Fresh Ginger", "amount": "30g", "swaps": [{ "Ginger Paste": "2 tsp" }, { "Ginger Powder": "1 tsp" }], "id": "ginger" },
-            { "name": "Fresh Coriander", "amount": "30g", "swaps": [], "id": "coriander" },
-            { "name": "Fresh Chillies", "amount": "1", "swaps": [], "id": "chillies" },
-            { "name": "Olive Oil", "amount": "4 tblsp", "swaps": [{ "Vegetable Oil": "2 tblsp" }, { "Sesemee Oil": "1 tblsp" }, { "Sunflower Oil": "2 tblsp" }], "id": "oil" },
-            { "name": "Lamb", "amount": "400g", "swaps": [{ "Chicken": "400g" }, { "Beef": "300g" }], "id": "meat" },
-            { "name": "Coriander Seeds/Powder", "amount": "1 tblsp", "swaps": [], "id": "coriander" },
-            { "name": "Cumin Seeds/Powder", "amount": "1/2 tblsp", "swaps": [], "id": "cumin" },
-            { "name": "Black Cumin Seeds/Powder", "amount": "1/2 tblsp", "swaps": [], "id": "blackCumin" },
-            { "name": "Cloves", "amount": "6", "swaps": [{ "star anise": "1" }, { "fennel seeds": "1/2 tsp" }], "id": "cloves" },
-            { "name": "Black Peppercorns", "amount": "6", "swaps": [], "id": "pepper" },
-            { "name": "Poppy Seeds", "amount": "1 tblsp", "swaps": [], "id": "poppy" },
-            { "name": "Black Cardamoms (seeds only)", "amount": "2", "swaps": [{ "Green Cardamoms": "4" }], "id": "cardamoms" },
-            { "name": "Dried Fenugreek Leaves", "amount": "1 tblsp", "swaps": [{ "Fenugreek Seeds": "1 tblsp" }], "id": "fenugreek" },
-            { "name": "Cinamon Powder", "amount": "1 tsp", "swaps": [{ "Cassia Bark": "10g" }, { "sugar": "1/2 tsp" }], "id": "cinamon" },
-            { "name": "Salt", "amount": "1/2 tblsp", "swaps": [], "id": "salt" },
-            { "name": "Turmeric Powder", "amount": "1/4 tblsp", "swaps": [], "id": "turnmeric" },
-            { "name": "Chillie Powder", "amount": "1/4 tblsp", "swaps": [{ "Chillie Flakes": "1/4 tblsp" }], "id": "chilliePowder" },
-            { "name": "Garam Masala", "amount": "1/2 tblsp", "swaps": [], "id": "garamMasala" },
-            ],
-        };
-
+        let hydrabadhi = hydrabadhiJson;
         let tikkaBalti = { "name": "Tikka Balti" };
         let saag = { "name": "Saag Gosht" };
 
@@ -83,8 +53,8 @@ class Indian extends React.Component {
 
         //put inner page on state so that it re renders the screen if this changes
         this.state = {
-            innerPage: 1, selectedRecipe: { "name": "" }, dairyFree: false, glutenFree: false, vegetarian: false,
-            creaminess: 50, heat: 50
+            innerPage: 1, selectedRecipe: { "name": "" }, "options": { dairyFree: false, glutenFree: false, vegetarian: false, vegan: false },
+            creaminess: 50, heat: 50, servingSize: 2
         };
 
         // This binding is necessary to make `this` work in the callback
@@ -97,6 +67,7 @@ class Indian extends React.Component {
         this.recipeSelected = this.recipeSelected.bind(this);
         this.sliderChanged = this.sliderChanged.bind(this);
         this.toggleCheckbox = this.toggleCheckbox.bind(this);
+        this.toggleSelect = this.toggleSelect.bind(this);
     }
 
     //callback function called when user wants to move to next inner page
@@ -213,10 +184,10 @@ class Indian extends React.Component {
         //tool for serving size
         let servingSizeOptions = [];
         for (let i = 0; i < this.maxServingSize; i++) {
-            servingSizeOptions.push(<option key={i+1}>{i + 1}</option>);
+            servingSizeOptions.push(<option value={i+1} key={i+1}>{i + 1}</option>);
         }
 
-        let numPeopleTool = <div><span>Servings: </span><select>
+        let numPeopleTool = <div><span>Servings: </span><select onChange={e => this.toggleSelect(e,"servingSize")}>
             {servingSizeOptions}
         </select></div>
 
@@ -227,10 +198,13 @@ class Indian extends React.Component {
         let dairyFree = this.buildCheckbox(this.state.dairyFree, "dairyFree", "Dairy Free: ");
         let vegetarian = this.buildCheckbox(this.state.vegetarian, "vegetarian", "Vegetarian:  ");
         let glutenFree = this.buildCheckbox(this.state.glutenFree, "glutenFree", "Gluten Free: ");
+        let vegan = this.buildCheckbox(this.state.vegan, "vegan", "Vegan:  ");
+
         let checkboxes = <div className="i-check-box-container">
             {vegetarian}
             {dairyFree}
             {glutenFree}
+            {vegan}
         </div>;
 
         //tool for dry vs creamy
@@ -270,6 +244,14 @@ class Indian extends React.Component {
     toggleCheckbox(event) {
         const name = event.target.name;
         const val = event.target.checked;
+        var options = { ...this.state.options }
+        options[name] = val;
+        this.setState({ options });
+    }
+
+    //Function called when select drop down is toggled
+    toggleSelect(event, name) {
+        const val = event.target.value;
         this.setState(state => ({
             [name]: val
         }));
@@ -285,6 +267,7 @@ class Indian extends React.Component {
     //Function to build the inner page to allow user to alter the ingredients
     buildIngredientsEditor(pageContents) {
 
+        //get recipe object for selected recipe
         let recipe = null;
         const selectedRecipe = this.state.selectedRecipe;
         this.recipes.forEach(function (recipeT) {
@@ -292,13 +275,42 @@ class Indian extends React.Component {
                 recipe = recipeT;
             }
         })
-    
-        console.log(recipe);
-        let ingredients = ""
+
+        //determine which checkboxes were selected
+        let enabledOptions = [];
+        for (let opt in this.state.options) {
+            if (this.state.options[opt] === true) {
+                enabledOptions.push(opt);
+            }
+        }
+
+        //build ingredients list
+        let ingredients = []
+        recipe.ingredients.forEach(function (ingredient) {
+            console.log(ingredient);
+            enabledOptions.forEach(function (opt) {
+                if (ingredient[opt] != undefined) {
+                    let newIngredient = {};
+                    newIngredient.name = ingredient[opt];
+                    newIngredient.amount = ingredient[opt + "Amount"];
+                    ingredients.push(newIngredient);
+                }
+                else {
+                    ingredients.push(ingredient);
+                }
+            })
+        })
+
+        console.log(ingredients);
+        let ingredientOpts = [];
+        ingredients.forEach(function (ingredient) {
+            const displayString = ingredient.name + " - " + ingredient.amount;
+            ingredientOpts.push(<span key={displayString}>{displayString}</span>);
+        })
 
         pageContents = <div className="i-recipe-selector">
             <ul className="i-recipe-options">
-                {ingredients}
+                {ingredientOpts}
             </ul>
         </div>;
 

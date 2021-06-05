@@ -1,0 +1,33 @@
+{
+            "name": "Hydrabadhi",
+            "brief": "A delicious creamy curry from the hydrabadhi region, made with a selection of ground spices and aromatics",
+            "cookingTime": "2h",
+            "defaultServingSize": 2,
+            "ingredients": [
+            { "name": "Double Cream", "amount": "200ml", "swaps": [{ "Creme Fraiche": "200ml" }, { "Milk": "80ml" }], "id": "cream", "dairyFree": "Oat Fraiche", "dairyFreeAmount": "200ml", "vegan": "Oat Fraiche", "veganAmount": "200ml" },
+            { "name": "Natural Yoghurt", "amount": "100ml", "swaps": [], "id": "yog", "dairyFree": "Alternative Plain Yoghurt", "dairyFreeAmount": "100ml", "vegan": "Alternative Plain Yoghurt", "veganAmount": "100ml" },
+            { "name": "Brown Onion", "amount": "1", "swaps": [{ "Shalotts": "4" }, { "Red Onion": "1" }], "id": "onion" },
+            { "name": "Tomatos", "amount": "4", "swaps": [{ "Tinned Tomatos": "400ml" }], "id": "tomatos" },
+            { "name": "Fresh Garlic", "amount": "6 Cloves", "swaps": [{ "Garlic Paste": "1 tblsp" }, { "Garlic Powder": "1/2 tblsp" }], "id": "garlic" },
+            { "name": "Fresh Ginger", "amount": "30g", "swaps": [{ "Ginger Paste": "2 tsp" }, { "Ginger Powder": "1 tsp" }], "id": "ginger" },
+            { "name": "Fresh Coriander", "amount": "30g", "swaps": [], "id": "coriander" },
+            { "name": "Fresh Chillies", "amount": "1", "swaps": [], "id": "chillies" },
+            { "name": "Olive Oil", "amount": "4 tblsp", "swaps": [{ "Vegetable Oil": "2 tblsp" }, { "Sesemee Oil": "1 tblsp" }, { "Sunflower Oil": "2 tblsp" }], "id": "oil" },
+            { "name": "Lamb", "amount": "400g", "swaps": [{ "Chicken": "400g" }, { "Beef": "300g" }], "id": "meat", "vegetarian": "Potatos, Squash, Cauliflower, or others", "vegetarianAmount": "400g", "vegan": "Potatos, Squash, Cauliflower, or others", "veganAmount": "400g" },
+            { "name": "Coriander Seeds/Powder", "amount": "1 tblsp", "swaps": [], "id": "coriander" },
+            { "name": "Cumin Seeds/Powder", "amount": "1/2 tblsp", "swaps": [], "id": "cumin" },
+            { "name": "Black Cumin Seeds/Powder", "amount": "1/2 tblsp", "swaps": [], "id": "blackCumin" },
+            { "name": "Cloves", "amount": "6", "swaps": [{ "star anise": "1" }, { "fennel seeds": "1/2 tsp" }], "id": "cloves" },
+            { "name": "Black Peppercorns", "amount": "6", "swaps": [], "id": "pepper" },
+            { "name": "Poppy Seeds", "amount": "1 tblsp", "swaps": [], "id": "poppy" },
+            { "name": "Black Cardamoms (seeds only)", "amount": "2", "swaps": [{ "Green Cardamoms": "4" }], "id": "cardamoms" },
+            { "name": "Dried Fenugreek Leaves", "amount": "1 tblsp", "swaps": [{ "Fenugreek Seeds": "1 tblsp" }], "id": "fenugreek" },
+            { "name": "Cinamon Powder", "amount": "1 tsp", "swaps": [{ "Cassia Bark": "10g" }, { "sugar": "1/2 tsp" }], "id": "cinamon" },
+            { "name": "Salt", "amount": "1/2 tblsp", "swaps": [], "id": "salt" },
+            { "name": "Turmeric Powder", "amount": "1/4 tblsp", "swaps": [], "id": "turnmeric" },
+            { "name": "Chillie Powder", "amount": "1/4 tblsp", "swaps": [{ "Chillie Flakes": "1/4 tblsp" }], "id": "chilliePowder" },
+            { "name": "Garam Masala", "amount": "1/2 tblsp", "swaps": [], "id": "garamMasala" },
+                { "name": "Chapattis", "amount": "6", "swaps": [{ "Garlic & Coriander Naan": "2" }, { "Peshwari Naan": "2" }], "vegan": "Vegan Naan", "veganAmount": 2, "glutenFree": "Vegan Naan", "glutenFreeAmount": 2, "id": "naan" }
+
+            ]
+        }
