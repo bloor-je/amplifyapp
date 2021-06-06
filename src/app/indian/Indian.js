@@ -146,7 +146,7 @@ class Indian extends React.Component {
         let innerPageContainer = <div className="i-inner-page-container">
             {prevPageButton}
             {nextPageButton}
-            <div>
+            <div className="i-inner-page-title-and-body-container">
                 <div className="i-inner-page-title-container">
                     <span className="i-inner-page-title">{pageTitle}</span>
                 </div>
@@ -212,12 +212,12 @@ class Indian extends React.Component {
 
             
         pageContents = <div className="i-recipe-selector">
-            <ul className="i-recipe-options">
+            <div className="i-tools-container">
                 {numPeopleTool}
                 {heatTool}
                 {creaminessTool}
                 {checkboxes}
-            </ul>
+            </div>
         </div>;
 
         return pageContents;
@@ -285,33 +285,36 @@ class Indian extends React.Component {
         }
 
         //build ingredients list
-        let ingredients = []
+        let ingredientsArray = []
         recipe.ingredients.forEach(function (ingredient) {
-            console.log(ingredient);
+            let ingredientAdded = false;
             enabledOptions.forEach(function (opt) {
-                if (ingredient[opt] != undefined) {
+                if (ingredient[opt] !== undefined) {
                     let newIngredient = {};
                     newIngredient.name = ingredient[opt];
                     newIngredient.amount = ingredient[opt + "Amount"];
-                    ingredients.push(newIngredient);
-                }
-                else {
-                    ingredients.push(ingredient);
+                    ingredientsArray.push(newIngredient);
+                    ingredientAdded = true;
                 }
             })
+            if (!ingredientAdded) {
+                ingredientsArray.push(ingredient);
+            }
         })
 
-        console.log(ingredients);
-        let ingredientOpts = [];
-        ingredients.forEach(function (ingredient) {
-            const displayString = ingredient.name + " - " + ingredient.amount;
-            ingredientOpts.push(<span key={displayString}>{displayString}</span>);
+        let ingredientsListJsx = [];
+        ingredientsArray.forEach(function (ingredient) {
+            const displayString = ingredient.name + ": " + ingredient.amount;
+            let jsxIngredient = <div key={displayString} className="i-ingredient-container">
+                <span >{displayString}</span>
+            </div>
+            ingredientsListJsx.push(jsxIngredient);
         })
 
         pageContents = <div className="i-recipe-selector">
-            <ul className="i-recipe-options">
-                {ingredientOpts}
-            </ul>
+            <div className="i-tools-container">
+                {ingredientsListJsx}
+            </div>
         </div>;
 
         return pageContents;

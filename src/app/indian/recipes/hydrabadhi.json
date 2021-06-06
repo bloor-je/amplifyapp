@@ -13,7 +13,7 @@
             { "name": "Fresh Coriander", "amount": "30g", "swaps": [], "id": "coriander" },
             { "name": "Fresh Chillies", "amount": "1", "swaps": [], "id": "chillies" },
             { "name": "Olive Oil", "amount": "4 tblsp", "swaps": [{ "Vegetable Oil": "2 tblsp" }, { "Sesemee Oil": "1 tblsp" }, { "Sunflower Oil": "2 tblsp" }], "id": "oil" },
-            { "name": "Lamb", "amount": "400g", "swaps": [{ "Chicken": "400g" }, { "Beef": "300g" }], "id": "meat", "vegetarian": "Potatos, Squash, Cauliflower, or others", "vegetarianAmount": "400g", "vegan": "Potatos, Squash, Cauliflower, or others", "veganAmount": "400g" },
+            { "name": "Lamb", "amount": "400g", "swaps": [{ "Chicken": "400g" }, { "Beef": "300g" }], "id": "meat", "vegetarian": "Potatos, Squash and/or Cauliflower", "vegetarianAmount": "400g", "vegan": "Potatos, Squash and/or Cauliflower", "veganAmount": "400g" },
             { "name": "Coriander Seeds/Powder", "amount": "1 tblsp", "swaps": [], "id": "coriander" },
             { "name": "Cumin Seeds/Powder", "amount": "1/2 tblsp", "swaps": [], "id": "cumin" },
             { "name": "Black Cumin Seeds/Powder", "amount": "1/2 tblsp", "swaps": [], "id": "blackCumin" },
