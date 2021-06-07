@@ -372,7 +372,7 @@ class Indian extends React.Component {
         })
 
         pageContents = <div className="i-recipe-selector">
-            <div className="i-tools-container">
+            <div className="i-ingredients-container">
                 {ingredientsListJsx}
             </div>
         </div>;

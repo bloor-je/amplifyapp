@@ -25,7 +25,7 @@
     .slider::-webkit-slider-thumb {
         -webkit-appearance: none; /* Override default look */
         appearance: none;
-        width: 2vw; /* Set a specific slider handle width */
+        width: 3vw; /* Set a specific slider handle width */
         height: 3vh; /* Slider handle height */
         background: #e2d077; 
         cursor: pointer; /* Cursor on hover */
