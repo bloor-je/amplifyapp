@@ -29,7 +29,7 @@
 .i-inner-page-body-container {
     margin-top: 6%;
     width: 100%;
-    height: 75%;
+    height: calc(86% - 5vh);
     display: inline-block;
 }
 
@@ -44,6 +44,29 @@
     font-weight: 600;
 }
 
+@media screen and (max-width: 300px){
+    .i-inner-page-title {
+        font-size: 3vh;
+    }
+
+    .i-inner-page-body {
+        font-size: 2vh;
+    }
+
+    .i-recipe-option{
+        font-size: 3vh !important;
+        margin-top: 15%;
+    }
+
+    .i-tools-container {
+        margin-top: 15% !important;
+    }
+
+    .i-ingredient-container {
+        font-size: 2vh !important;
+    }
+}
+
 .i-inner-page-title-container{
 
 }
@@ -51,7 +74,9 @@
 .i-inner-page-title-and-body-container {
     height: 100%;
     width: 80%;
-    display:inherit;
+    display: inherit;
+    border: 1px solid #e2ca6d;
+    border-radius: inherit;
 }
 
 .i-recipe-selector {
@@ -66,28 +91,30 @@
     margin: 0;
     padding: 0;
     text-align: center;
+    display: table;
 }
 
 .i-recipe-option {
-    float: left;
+    float: none;
     border-radius: 5px;
-    margin-bottom: 5px;
     text-align: center;
     font-size: 5vh;
     font-family: ui-serif;
-    width: 100%;
+    width: calc(100% - 5px);
+    display: inline-block;
     margin-bottom: 5vh;
+    min-width: -moz-fit-content;
     min-width: fit-content;
 }
 
-    .i-recipe-option:hover {
+    .i-recipe-option-enabled:hover {
         border-radius: 5px;
         background-color: #c0b5b54f;
         cursor: grab;
     }
 
 .i-recipe-selected {
-    border: 3px solid #13ba47;
+    border: 2px solid #e2d077;
 }
 
 .i-check-box-container{
@@ -114,6 +141,21 @@
     font-size: 3vh;
 }
 
+.i-method-container{
+    overflow-y: auto;
+    height: 100%;
+    margin-right: 5px;
+}
+
+.i-method-item {
+    float: left;
+    text-align: left;
+}
+
+.i-method-list{
+    list-style: auto;
+}
+
 .i-next-page-button {
     position: relative;
     top: 50%;
@@ -121,14 +163,15 @@
 }
 
     .i-next-page-button button {
-        color: black;
-        background-color: green;
+        color: #e2d077;
+        background-color: #4f4b4b;
         border-radius: 10px;
         text-shadow: none;
         right: 0vw;
         width: fit-content;
         height: fit-content;
-        font-size: 4vw;
+        font-size: 2vw;
+        border: 1px solid #4f4b4b;
     }
 
         .i-next-page-button button:hover {
@@ -142,13 +185,14 @@
 }
 
     .i-prev-page-button button {
-        color: black;
-        background-color: #850909;
+        color: #e2d077;
+        background-color: #4f4b4b;
         text-shadow: none;
         border-radius: 10px;
         width: fit-content;
         height: fit-content;
-        font-size: 4vw;
+        font-size: 2vw;
+        border: 1px solid #4f4b4b;
     }
 
         .i-prev-page-button button:hover {

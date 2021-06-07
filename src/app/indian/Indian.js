@@ -11,15 +11,19 @@ import React from 'react';
  */
 class Indian extends React.Component {
 
+
+
     //constructor for this class
     constructor(props) {
         super(props);
 
+        this.fractionPattern = /(?:[1-9][0-9]*|0)(?:\/[1-9][0-9]*)?/g;
+
         this.title = "Indian Cuisine";
 
         let hydrabadhi = hydrabadhiJson;
-        let tikkaBalti = { "name": "Tikka Balti" };
-        let saag = { "name": "Saag Gosht" };
+        let tikkaBalti = { "name": "Tikka Balti - Coming Soon!", "disabled": true };
+        let saag = { "name": "Saag Gosht - Coming Soon!", "disabled": true  };
 
         this.recipes = [hydrabadhi, saag, tikkaBalti];
         this.numPages = 4;
@@ -54,7 +58,7 @@ class Indian extends React.Component {
         //put inner page on state so that it re renders the screen if this changes
         this.state = {
             innerPage: 1, selectedRecipe: { "name": "" }, "options": { dairyFree: false, glutenFree: false, vegetarian: false, vegan: false },
-            creaminess: 50, heat: 50, servingSize: 2
+            creaminess: 50, heat: 33.33, servingSize: 2
         };
 
         // This binding is necessary to make `this` work in the callback
@@ -62,12 +66,12 @@ class Indian extends React.Component {
         this.prevPage = this.prevPage.bind(this);
         this.setInnerPage = this.setInnerPage.bind(this);
         this.getActiveInnerPage = this.getActiveInnerPage.bind(this);
-        this.buildHydrabadhiMethod = this.buildHydrabadhiMethod.bind(this);
         this.buildInnerPageContainer = this.buildInnerPageContainer.bind(this);
         this.recipeSelected = this.recipeSelected.bind(this);
         this.sliderChanged = this.sliderChanged.bind(this);
         this.toggleCheckbox = this.toggleCheckbox.bind(this);
         this.toggleSelect = this.toggleSelect.bind(this);
+        this.decimalToFraction = this.decimalToFraction.bind(this);
     }
 
     //callback function called when user wants to move to next inner page
@@ -165,8 +169,14 @@ class Indian extends React.Component {
         let that = this;
         this.recipes.forEach(function (recipe) {
             let isRecipeSelected = (that.state.selectedRecipe.name === recipe.name);
-            let li = <li key={recipe.name} className={isRecipeSelected ? "i-recipe-option i-recipe-selected" : "i-recipe-option"} onClick={() => that.recipeSelected(recipe)}>{recipe.name}</li>
-            list.push(li);
+            if (!recipe.disabled) {
+                let li = <li key={recipe.name} className={isRecipeSelected ? "i-recipe-option i-recipe-option-enabled i-recipe-selected" : "i-recipe-option-enabled i-recipe-option"} onClick={() => that.recipeSelected(recipe)}>{recipe.name}</li>
+                list.push(li);
+            }
+            else {
+                let li = <li key={recipe.name} className= "i-recipe-option" >{recipe.name}</li>
+                list.push(li);
+            }
         })
 
         pageContents = <div className="i-recipe-selector">
@@ -178,6 +188,20 @@ class Indian extends React.Component {
         return pageContents;
     }
 
+    //Funciton to select a recipe when clicked on
+    recipeSelected(selection) {
+        if (this.state.selectedRecipe.name === selection.name) {
+            selection = { "name": "" };
+        }
+        this.setState(state => ({
+            selectedRecipe: selection
+        }));
+
+        if (selection.name !== "") {
+            this.nextPage();
+        }
+    }
+
     //Funciton to build the inner page for Tools to edit recipe
     buildRecipeTools(pageContents) {
 
@@ -187,7 +211,7 @@ class Indian extends React.Component {
             servingSizeOptions.push(<option value={i+1} key={i+1}>{i + 1}</option>);
         }
 
-        let numPeopleTool = <div><span>Servings: </span><select onChange={e => this.toggleSelect(e,"servingSize")}>
+        let numPeopleTool = <div><span>Servings: </span><select value={this.state.servingSize} onChange={e => this.toggleSelect(e,"servingSize")}>
             {servingSizeOptions}
         </select></div>
 
@@ -195,10 +219,10 @@ class Indian extends React.Component {
         let heatTool = <Slider sliderName="heat" sliderDisplayTag="Heat:" sliderChanged={this.sliderChanged} defaultValue={ this.state.heat}/>;
 
         //checkboxes
-        let dairyFree = this.buildCheckbox(this.state.dairyFree, "dairyFree", "Dairy Free: ");
-        let vegetarian = this.buildCheckbox(this.state.vegetarian, "vegetarian", "Vegetarian:  ");
-        let glutenFree = this.buildCheckbox(this.state.glutenFree, "glutenFree", "Gluten Free: ");
-        let vegan = this.buildCheckbox(this.state.vegan, "vegan", "Vegan:  ");
+        let dairyFree = this.buildCheckbox(this.state.options.dairyFree, "dairyFree", "Dairy Free: ");
+        let vegetarian = this.buildCheckbox(this.state.options.vegetarian, "vegetarian", "Vegetarian:  ");
+        let glutenFree = this.buildCheckbox(this.state.options.glutenFree, "glutenFree", "Gluten Free: ");
+        let vegan = this.buildCheckbox(this.state.options.vegan, "vegan", "Vegan:  ");
 
         let checkboxes = <div className="i-check-box-container">
             {vegetarian}
@@ -267,41 +291,77 @@ class Indian extends React.Component {
     //Function to build the inner page to allow user to alter the ingredients
     buildIngredientsEditor(pageContents) {
 
-        //get recipe object for selected recipe
-        let recipe = null;
-        const selectedRecipe = this.state.selectedRecipe;
-        this.recipes.forEach(function (recipeT) {
-            if (recipeT.name === selectedRecipe.name) {
-                recipe = recipeT;
-            }
-        })
+        //make this accessible in loops etc
+        let that = this;
 
-        //determine which checkboxes were selected
-        let enabledOptions = [];
-        for (let opt in this.state.options) {
-            if (this.state.options[opt] === true) {
-                enabledOptions.push(opt);
+        let ingredientsArray = []
+
+        //get recipe object for selected recipe
+        const selectedRecipe = this.state.selectedRecipe;
+        if (selectedRecipe.name !== "") {
+
+            //determine which checkboxes were selected
+            let enabledOptions = [];
+            for (let opt in this.state.options) {
+                if (this.state.options[opt] === true) {
+                    enabledOptions.push(opt);
+                }
             }
+
+            let heatVal = (this.state.heat / 100) * 3;
+            let creamVal = (this.state.creaminess / 100) * 2;
+            let servingVal = this.state.servingSize / 2;
+
+            //build ingredients list
+            selectedRecipe.ingredients.forEach(function (ingredient) {
+                let ingredientToAdd = Object.assign({}, ingredient);
+
+                //apply checkbox filters
+                enabledOptions.forEach(function (opt) {
+                    if (ingredient[opt] !== undefined) {
+                        let newIngredient = {};
+                        newIngredient.name = ingredient[opt];
+                        newIngredient.amount = "" + ingredient[opt + "Amount"];
+                        newIngredient.id = ingredient.id;
+                        ingredientToAdd = newIngredient;
+                    }
+                })
+                let numericAmountFraction = ingredientToAdd.amount.match(that.fractionPattern);
+                let units = ingredientToAdd.amount.replace(/[^a-z]/gi, '');
+                let numericAmount = Number(eval(numericAmountFraction[0]));
+
+                //apply heat slider
+                if (ingredientToAdd.id === "chillies" || ingredientToAdd.id === "pepper"
+                    || ingredientToAdd.id === "chilliePowder") {
+                    numericAmount = (Math.round(numericAmount * heatVal * 4) / 4);
+                }
+
+                if ((ingredientToAdd.id === "ginger" || ingredientToAdd.id === "coriander")
+                    && heatVal > 1) { //too much ginger/coriander gives weird taste so this is an exception
+                    numericAmount = (Math.round(numericAmount * 1.5 * 4) / 4);
+                }
+
+                //apply creaminess slider
+                if (ingredientToAdd.id === "cream" || ingredientToAdd.id === "yog") {
+                    numericAmount = (Math.round(numericAmount * creamVal * 4) / 4);
+                }
+
+                //apply serving size adjuster
+                numericAmount = (Math.round(numericAmount * servingVal * 4) / 4);
+
+                //convert back into readable format
+                numericAmount = that.decimalToFraction(numericAmount);
+                let newAmount = numericAmount + " " + units;
+                ingredientToAdd.amount = newAmount;
+
+                //add ingredient to display array
+                ingredientsArray.push(ingredientToAdd);
+            })
         }
 
-        //build ingredients list
-        let ingredientsArray = []
-        recipe.ingredients.forEach(function (ingredient) {
-            let ingredientAdded = false;
-            enabledOptions.forEach(function (opt) {
-                if (ingredient[opt] !== undefined) {
-                    let newIngredient = {};
-                    newIngredient.name = ingredient[opt];
-                    newIngredient.amount = ingredient[opt + "Amount"];
-                    ingredientsArray.push(newIngredient);
-                    ingredientAdded = true;
-                }
-            })
-            if (!ingredientAdded) {
-                ingredientsArray.push(ingredient);
-            }
-        })
+        this.ingredientsArray = ingredientsArray;
 
+        //turn into jsx
         let ingredientsListJsx = [];
         ingredientsArray.forEach(function (ingredient) {
             const displayString = ingredient.name + ": " + ingredient.amount;
@@ -320,60 +380,60 @@ class Indian extends React.Component {
         return pageContents;
     }
 
+    //Function to convert a decimal into a nice fraction
+    decimalToFraction(decimal) {
+        let obj = this.getFraction(decimal);
+
+        if (obj.numerator === obj.denominator) {
+            return 1;
+        }
+
+        if (obj.denominator === 1) {
+            return obj.numerator;
+        }
+
+        if (obj.numerator > obj.denominator) {
+            return decimal;
+        }
+
+        return obj.numerator + "/" +  obj.denominator;
+    }
+
+    //funciton to convert decimal into basic fraction object
+    getFraction = (decimal) => {
+        for (var denominator = 1; (decimal * denominator) % 1 !== 0; denominator++);
+        return { numerator: decimal * denominator, denominator: denominator };
+    }
+
     //Funciton to build the inner page for cook method
     buildMethod(pageContents) {
 
-        let methodText = "";
-        switch (this.state.selectedRecipe.name) {
-            case "Hydranadhi":
-                methodText = this.buildHydrabadhiMethod();
-                break;
-            case "Saag":
-                methodText = this.buildSaagMethod();
-                break;
-            case "Tikka Balti":
-                methodText = this.buildBaltiMethod();
-                break;
-            default:
-                methodText = "";
-                break;
+        const selectedRecipe = this.state.selectedRecipe;
+        const ingredientsArray = this.ingredientsArray;
+        let method = [];
+        let i = 1;
+        if (this.ingredientsArray !== undefined && selectedRecipe.name !== "") {
+            selectedRecipe.methodSteps.forEach(function (methodItem) {
+                ingredientsArray.forEach(function(ingredient){
+                    let ingredientReplacer = "{" + ingredient.id + "}";
+                    methodItem = methodItem.replace(ingredientReplacer, ingredient.name);
+                })
+                method.push(<li key={i} className="i-method-item">{methodItem}</li>);
+                i++;
+            })
         }
 
         pageContents = <div className="i-recipe-selector">
-            <span>{methodText}</span>
+            <div className="i-method-container">
+                <ul className="i-method-list">
+                    {method}
+                </ul>
+            </div>
         </div>;
+
+        return pageContents;
     }
 
-
-    //Function to build the method string for hydrabadhi recipe
-    buildHydrabadhiMethod() {
-        let method = "";
-
-        return method;
-    }
-
-    //Function to build the method string for Saag recipe
-    buildSaagMethod() {
-        let method = "";
-
-        return method;
-    }
-
-    //Function to build the method string for Tikka Balti recipe
-    buildBaltiMethod() {
-        let method = "";
-
-        return method;
-    }
-
-
-    //Funciton to select a recipe when clicked on
-    recipeSelected(selection) {
-        this.setState(state => ({
-            selectedRecipe: selection
-        }));
-        this.nextPage();
-    }
 
     //main function for rendering the display of this page 
     render() {

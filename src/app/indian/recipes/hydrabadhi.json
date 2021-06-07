@@ -3,31 +3,222 @@
             "brief": "A delicious creamy curry from the hydrabadhi region, made with a selection of ground spices and aromatics",
             "cookingTime": "2h",
             "defaultServingSize": 2,
-            "ingredients": [
-            { "name": "Double Cream", "amount": "200ml", "swaps": [{ "Creme Fraiche": "200ml" }, { "Milk": "80ml" }], "id": "cream", "dairyFree": "Oat Fraiche", "dairyFreeAmount": "200ml", "vegan": "Oat Fraiche", "veganAmount": "200ml" },
-            { "name": "Natural Yoghurt", "amount": "100ml", "swaps": [], "id": "yog", "dairyFree": "Alternative Plain Yoghurt", "dairyFreeAmount": "100ml", "vegan": "Alternative Plain Yoghurt", "veganAmount": "100ml" },
-            { "name": "Brown Onion", "amount": "1", "swaps": [{ "Shalotts": "4" }, { "Red Onion": "1" }], "id": "onion" },
-            { "name": "Tomatos", "amount": "4", "swaps": [{ "Tinned Tomatos": "400ml" }], "id": "tomatos" },
-            { "name": "Fresh Garlic", "amount": "6 Cloves", "swaps": [{ "Garlic Paste": "1 tblsp" }, { "Garlic Powder": "1/2 tblsp" }], "id": "garlic" },
-            { "name": "Fresh Ginger", "amount": "30g", "swaps": [{ "Ginger Paste": "2 tsp" }, { "Ginger Powder": "1 tsp" }], "id": "ginger" },
-            { "name": "Fresh Coriander", "amount": "30g", "swaps": [], "id": "coriander" },
-            { "name": "Fresh Chillies", "amount": "1", "swaps": [], "id": "chillies" },
-            { "name": "Olive Oil", "amount": "4 tblsp", "swaps": [{ "Vegetable Oil": "2 tblsp" }, { "Sesemee Oil": "1 tblsp" }, { "Sunflower Oil": "2 tblsp" }], "id": "oil" },
-            { "name": "Lamb", "amount": "400g", "swaps": [{ "Chicken": "400g" }, { "Beef": "300g" }], "id": "meat", "vegetarian": "Potatos, Squash and/or Cauliflower", "vegetarianAmount": "400g", "vegan": "Potatos, Squash and/or Cauliflower", "veganAmount": "400g" },
-            { "name": "Coriander Seeds/Powder", "amount": "1 tblsp", "swaps": [], "id": "coriander" },
-            { "name": "Cumin Seeds/Powder", "amount": "1/2 tblsp", "swaps": [], "id": "cumin" },
-            { "name": "Black Cumin Seeds/Powder", "amount": "1/2 tblsp", "swaps": [], "id": "blackCumin" },
-            { "name": "Cloves", "amount": "6", "swaps": [{ "star anise": "1" }, { "fennel seeds": "1/2 tsp" }], "id": "cloves" },
-            { "name": "Black Peppercorns", "amount": "6", "swaps": [], "id": "pepper" },
-            { "name": "Poppy Seeds", "amount": "1 tblsp", "swaps": [], "id": "poppy" },
-            { "name": "Black Cardamoms (seeds only)", "amount": "2", "swaps": [{ "Green Cardamoms": "4" }], "id": "cardamoms" },
-            { "name": "Dried Fenugreek Leaves", "amount": "1 tblsp", "swaps": [{ "Fenugreek Seeds": "1 tblsp" }], "id": "fenugreek" },
-            { "name": "Cinamon Powder", "amount": "1 tsp", "swaps": [{ "Cassia Bark": "10g" }, { "sugar": "1/2 tsp" }], "id": "cinamon" },
-            { "name": "Salt", "amount": "1/2 tblsp", "swaps": [], "id": "salt" },
-            { "name": "Turmeric Powder", "amount": "1/4 tblsp", "swaps": [], "id": "turnmeric" },
-            { "name": "Chillie Powder", "amount": "1/4 tblsp", "swaps": [{ "Chillie Flakes": "1/4 tblsp" }], "id": "chilliePowder" },
-            { "name": "Garam Masala", "amount": "1/2 tblsp", "swaps": [], "id": "garamMasala" },
-                { "name": "Chapattis", "amount": "6", "swaps": [{ "Garlic & Coriander Naan": "2" }, { "Peshwari Naan": "2" }], "vegan": "Vegan Naan", "veganAmount": 2, "glutenFree": "Vegan Naan", "glutenFreeAmount": 2, "id": "naan" }
+    "ingredients": [
+        {
+            "name": "Double Cream",
+            "amount": "200ml",
+            "swaps": [
+                { "Creme Fraiche": "200ml" },
+                { "Milk": "80ml" }
+            ],
+            "id": "cream",
+            "dairyFree": "Oat Fraiche",
+            "dairyFreeAmount": "200ml",
+            "vegan": "Oat Fraiche",
+            "veganAmount": "200ml"
+        },
+        {
+            "name": "Natural Yoghurt",
+            "amount": "100ml",
+            "swaps": [],
+            "id": "yog",
+            "dairyFree": "Alternative Plain Yoghurt",
+            "dairyFreeAmount": "100ml",
+            "vegan": "Alternative Plain Yoghurt",
+            "veganAmount": "100ml"
+        },
+        {
+            "name": "Brown Onion",
+            "amount": "1",
+            "swaps": [
+                { "Shalotts": "4" },
+                { "Red Onion": "1" }
+            ],
+            "id": "onion"
+        },
+        {
+            "name": "Tomatos",
+            "amount": "4",
+            "swaps": [ { "Tinned Tomatos": "400ml" } ],
+            "id": "tomatos"
+        },
+        {
+            "name": "Fresh Garlic",
+            "amount": "6 Cloves",
+            "swaps": [
+                { "Garlic Paste": "1 tblsp" },
+                { "Garlic Powder": "1/2 tblsp" }
+            ],
+            "id": "garlic"
+        },
+        {
+            "name": "Fresh Ginger",
+            "amount": "30g",
+            "swaps": [
+                { "Ginger Paste": "2 tsp" },
+                { "Ginger Powder": "1 tsp" }
+            ],
+            "id": "ginger"
+        },
+        {
+            "name": "Fresh Coriander",
+            "amount": "30g",
+            "swaps": [],
+            "id": "freshCoriander"
+        },
+        {
+            "name": "Fresh Chillies",
+            "amount": "1",
+            "swaps": [],
+            "id": "chillies"
+        },
+        {
+            "name": "Olive Oil",
+            "amount": "4 tblsp",
+            "swaps": [
+                { "Vegetable Oil": "2 tblsp" },
+                { "Sesemee Oil": "1 tblsp" },
+                { "Sunflower Oil": "2 tblsp" }
+            ],
+            "id": "oil"
+        },
+        {
+            "name": "Lamb",
+            "amount": "400g",
+            "swaps": [
+                { "Chicken": "400g" },
+                { "Beef": "300g" }
+            ],
+            "id": "meat",
+            "vegetarian": "Potatos, Squash and/or Cauliflower",
+            "vegetarianAmount": "400g",
+            "vegan": "Potatos, Squash and/or Cauliflower",
+            "veganAmount": "400g"
+        },
+        {
+            "name": "Coriander Seeds/Powder",
+            "amount": "1 tblsp",
+            "swaps": [],
+            "id": "coriander"
+        },
+        {
+            "name": "Cumin Seeds/Powder",
+            "amount": "1/2 tblsp",
+            "swaps": [],
+            "id": "cumin"
+        },
+        {
+            "name": "Black Cumin Seeds/Powder",
+            "amount": "1/2 tblsp",
+            "swaps": [],
+            "id": "blackCumin"
+        },
+        {
+            "name": "Cloves",
+            "amount": "6",
+            "swaps": [
+                { "star anise": "1" },
+                { "fennel seeds": "1/2 tsp" }
+            ],
+            "id": "cloves"
+        },
+        {
+            "name": "Black Peppercorns",
+            "amount": "6",
+            "swaps": [],
+            "id": "pepper"
+        },
+        {
+            "name": "Poppy Seeds",
+            "amount": "1 tblsp",
+            "swaps": [],
+            "id": "poppy"
+        },
+        {
+            "name": "Black Cardamoms (seeds only)",
+            "amount": "2",
+            "swaps": [ { "Green Cardamoms": "4" } ],
+            "id": "cardamoms"
+        },
+        {
+            "name": "Dried Fenugreek Leaves",
+            "amount": "1 tblsp",
+            "swaps": [ { "Fenugreek Seeds": "1 tblsp" } ],
+            "id": "fenugreek"
+        },
+        {
+            "name": "Cinamon Powder",
+            "amount": "1 tsp",
+            "swaps": [
+                { "Cassia Bark": "10g" },
+                { "sugar": "1/2 tsp" }
+            ],
+            "id": "cinamon"
+        },
+        {
+            "name": "Bay Leaves",
+            "amount": "4",
+            "swaps": [],
+            "id": "bay"
+        },
+        {
+            "name": "Salt",
+            "amount": "1/2 tblsp",
+            "swaps": [],
+            "id": "salt"
+        },
+        {
+            "name": "Turmeric Powder",
+            "amount": "1/4 tblsp",
+            "swaps": [],
+            "id": "turmeric"
+        },
+        {
+            "name": "Hot Chilli Powder",
+            "amount": "1/4 tblsp",
+            "swaps": [ { "Chillie Flakes": "1/4 tblsp" } ],
+            "id": "chilliePowder"
+        },
+        {
+            "name": "Garam Masala",
+            "amount": "1/2 tblsp",
+            "swaps": [],
+            "id": "garam"
+        },
+        {
+            "name": "Kewra Water",
+            "amount": "2 tblsp",
+            "swaps": [ { "Rose Water": "2 tblsp" } ],
+            "id": "kewra"
+        },
+        {
+            "name": "Chapattis",
+            "amount": "6",
+            "swaps": [
+                { "Garlic & Coriander Naan": "2" },
+                { "Peshwari Naan": "2" }
+            ],
+            "vegan": "Vegan Naan",
+            "veganAmount": 2,
+            "glutenFree": "Vegan Naan",
+            "glutenFreeAmount": 2,
+            "id": "naan"
+        }
+    ],
+    "methodSteps": [
+        "Firstly chop the {onion} and fry in half the {oil} for 5 minutes on a medium heat until softened/carmelised, stirring every 30s.",
+        "Next create a base mixture by blending the fried {onion} with the {yog}, {garlic}, {ginger}, half the {cream}, and quater of the {tomatos} until smooth.",
+        "Now add the base mixture into a pan (large enough to hold the finished dish) with the remaining {oil} and {tomatos}, cook on the hob on a medium heat for 2 minutes then decrease the heat to low.",
+        "Whilst the base mixture simmers, grind the {coriander}, {cumin}, {blackCumin}, {cloves}, {fenugreek}, {pepper}, {cardamoms}, {poppy}, {bay} and {cinamon} together using a pestle and mortar or an electric spice (or coffee) grinder",
+        "Also whilst the base mixture simmers, chop the {meat} into small cube shaped pieces (smaller pieces absorb more flavour).",
+        "Cook the {meat} in a seperate pan with the lid on, on a low heat with 50ml of cold water, 1 tsp of the ground spice mixture and half the {salt} for 20 minutes.",
+        "Once the base mixture has simmered for at least 15 minutes, add the ground spice mix to the base with a splash of cold water to prevent the spices from burning. Mix well and leave to simmer on a low heat for 15 minutes.",
+        "Now add the {turmeric}, the remaining {salt} and all the {chilliePowder} with another splash of water and simmer for a further 10 minutes.",
+        "Once the 10 minutes has passed, add the {meat} into the pan with the remaining {cream} and cook for at least 15 minutes on a low heat, stirring every few minutes.",
+        "Next chop the {chillies} and add to the pan, increase the heat to high and stir the curry well.",
+        "Heat the {naan} as described on the packet.",
+        "Finally, add the {freshCoriander} and {kewra} to the curry and stir well for 30s. Serve the curry then garnish it with {garam}, serve the {naan} on a seperate plate.",
+        "Enjoy!"
+    ]
 
-            ]
         }
