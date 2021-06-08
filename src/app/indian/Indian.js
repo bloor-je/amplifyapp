@@ -30,10 +30,8 @@ class Indian extends React.Component {
 
         this.maxServingSize = 10;
 
-        this.nextPageButton = <div className="i-next-page-button"><button className="fa fa-long-arrow-right" onClick={() => this.nextPage()}></button></div>;
-        this.prevPageButton = <div className="i-prev-page-button"><button className="fa fa-long-arrow-left"  onClick={() => this.prevPage()}></button></div>;
-        this.prevPageButtonPlaceHolder = <div className="i-prev-page-button i-placeholder-button"><button className="fa fa-long-arrow-left"></button></div>;
-        this.nextPageButtonPlaceHolder = <div className="i-next-page-button i-placeholder-button"><button className="fa fa-long-arrow-right"></button></div>;
+        this.nextPageButton = <div className="i-page-button-container i-next-page-button"><button className="fa fa-arrow-down" onClick={() => this.nextPage()}></button></div>;
+        this.prevPageButton = <div className="i-page-button-container i-prev-page-button"><button className="fa fa-arrow-up"  onClick={() => this.prevPage()}></button></div>;
 
         this.innerPage1 = {
             "title": "Choose a Recipe",
@@ -144,12 +142,10 @@ class Indian extends React.Component {
                 break;
         }
 
-        let nextPageButton = (this.state.innerPage > this.numPages-1) ? this.nextPageButtonPlaceHolder : this.nextPageButton;
-        let prevPageButton = (this.state.innerPage < 2) ? this.prevPageButtonPlaceHolder : this.prevPageButton;
+        let nextPageButton = (this.state.innerPage > this.numPages-1) ? <div></div> : this.nextPageButton;
+        let prevPageButton = (this.state.innerPage < 2) ? <div></div> : this.prevPageButton;
 
         let innerPageContainer = <div className="i-inner-page-container">
-            {prevPageButton}
-            {nextPageButton}
             <div className="i-inner-page-title-and-body-container">
                 <div className="i-inner-page-title-container">
                     <span className="i-inner-page-title">{pageTitle}</span>
@@ -157,6 +153,8 @@ class Indian extends React.Component {
                 <div className="i-inner-page-body-container">
                     <div className="i-inner-page-body">{pageContents}</div>
                 </div>
+                {prevPageButton}
+                {nextPageButton}
             </div>
         </div>;
 
