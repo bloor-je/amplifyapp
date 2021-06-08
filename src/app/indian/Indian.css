@@ -46,24 +46,20 @@
 
 @media screen and (max-width: 300px){
     .i-inner-page-title {
-        font-size: 3vh;
+        font-size: 3vh !important;
     }
 
     .i-inner-page-body {
-        font-size: 2vh;
+        font-size: 2vh !important;
     }
 
     .i-recipe-option{
         font-size: 3vh !important;
-        margin-top: 15%;
+        margin-top: 15% !important;
     }
 
     .i-tools-container {
         margin-top: 15% !important;
-    }
-
-    .i-ingredient-container {
-        font-size: 2vh !important;
     }
 }
 
@@ -73,7 +69,7 @@
     }
 
     .i-inner-page-title {
-        font-size: 4vh;
+        font-size: 3vh;
     }
 
     .i-tools-container {

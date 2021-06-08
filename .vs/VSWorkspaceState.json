@@ -3,14 +3,14 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\app-wrapper",
     "\\src\\app\\indian",
+    "\\src\\app\\indian\\recipes",
     "\\src\\app\\menu",
     "\\src\\app\\slider",
     "\\src\\external",
     "\\src\\external\\font-awesome",
     "\\src\\images"
   ],
-  "SelectedNode": "\\src\\app\\indian\\Indian.js",
+  "SelectedNode": "\\src\\app\\slider\\Slider.js",
   "PreviewInSolutionExplorer": false
 }
