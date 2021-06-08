@@ -63,7 +63,7 @@
     }
 
     button{
-        font-size: 2vw !important;
+        font-size: 3vh !important;
     }
 }
 
@@ -92,7 +92,7 @@
 
 .i-inner-page-title-and-body-container {
     height: 100%;
-    width: 80%;
+    width: 99%;
     display: inherit;
     border: 1px solid #e2ca6d;
     border-radius: inherit;
@@ -178,7 +178,7 @@
 }
 
 .i-method-item {
-    float: left;
+    float: inherit;
     text-align: left;
 }
 
@@ -201,8 +201,8 @@
         text-shadow: none;
         right: 0vw;
         width: fit-content;
-        height: 4vw;
-        font-size: 3vw;
+        height: 5vh;
+        font-size: 4vh;
         border: 1px solid #4f4b4b;
     }
 
