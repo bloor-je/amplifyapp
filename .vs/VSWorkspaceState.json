@@ -1,16 +1,15 @@
 {
   "ExpandedNodes": [
     "",
+    "\\public",
     "\\src",
     "\\src\\app",
     "\\src\\app\\indian",
     "\\src\\app\\indian\\recipes",
     "\\src\\app\\menu",
     "\\src\\app\\slider",
-    "\\src\\external",
-    "\\src\\external\\font-awesome",
-    "\\src\\images"
+    "\\src\\external\\font-awesome"
   ],
-  "SelectedNode": "\\src\\app\\slider\\Slider.js",
+  "SelectedNode": "\\src\\app\\indian\\Indian.js",
   "PreviewInSolutionExplorer": false
 }
