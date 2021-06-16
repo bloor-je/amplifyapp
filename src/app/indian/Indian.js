@@ -3,6 +3,7 @@ import '../../index.css';
 import '../landing-page/LandingPage.css';
 import '../../external/font-awesome/font-awesome.min.css'
 import hydrabadhiJson from './recipes/hydrabadhi.json'
+import saagJson from './recipes/saag.json'
 import Slider from '../slider/Slider'
 import React from 'react';
 
@@ -23,7 +24,7 @@ class Indian extends React.Component {
 
         let hydrabadhi = hydrabadhiJson;
         let tikkaBalti = { "name": "Tikka Balti - Coming Soon!", "disabled": true };
-        let saag = { "name": "Saag Gosht - Coming Soon!", "disabled": true  };
+        let saag = saagJson;
 
         this.recipes = [hydrabadhi, saag, tikkaBalti];
         this.numPages = 4;

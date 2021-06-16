@@ -1,0 +1,183 @@
+{
+            "name": "Saag",
+            "brief": "",
+            "cookingTime": "2h",
+            "defaultServingSize": 2,
+    "ingredients": [
+        {
+            "name": "Natural Yoghurt",
+            "amount": "100ml",
+            "swaps": [],
+            "id": "yog",
+            "dairyFree": "Alternative Plain Yoghurt",
+            "dairyFreeAmount": "100ml",
+            "vegan": "Alternative Plain Yoghurt",
+            "veganAmount": "100ml"
+        },
+        {
+            "name": "Brown Onion",
+            "amount": "1",
+            "swaps": [
+                { "Shalotts": "4" },
+                { "Red Onion": "1" }
+            ],
+            "id": "onion"
+        },
+        {
+            "name": "Tomatos",
+            "amount": "3",
+            "swaps": [ { "Tinned Tomatos": "400ml" } ],
+            "id": "tomatos"
+        },
+        {
+            "name": "Fresh Garlic",
+            "amount": "6 Cloves",
+            "swaps": [
+                { "Garlic Paste": "1 tblsp" },
+                { "Garlic Powder": "1/2 tblsp" }
+            ],
+            "id": "garlic"
+        },
+        {
+            "name": "Fresh Ginger",
+            "amount": "40g",
+            "swaps": [
+                { "Ginger Paste": "2 tsp" },
+                { "Ginger Powder": "2 tsp" }
+            ],
+            "id": "ginger"
+        },
+        {
+            "name": "Fresh Coriander",
+            "amount": "50g",
+            "swaps": [],
+            "id": "freshCoriander"
+        },
+        {
+            "name": "Fresh Chillies",
+            "amount": "2",
+            "swaps": [],
+            "id": "chillies"
+        },
+        {
+            "name": "Olive Oil",
+            "amount": "4 tblsp",
+            "swaps": [
+                { "Vegetable Oil": "2 tblsp" },
+                { "Sesemee Oil": "1 tblsp" },
+                { "Sunflower Oil": "2 tblsp" }
+            ],
+            "id": "oil"
+        },
+        {
+            "name": "Lamb",
+            "amount": "400g",
+            "swaps": [
+                { "Chicken": "400g" },
+                { "Beef": "300g" }
+            ],
+            "id": "meat",
+            "vegetarian": "Potatos, Squash and/or Cauliflower",
+            "vegetarianAmount": "400g",
+            "vegan": "Potatos, Squash and/or Cauliflower",
+            "veganAmount": "400g"
+        },
+        {
+            "name": "Coriander Seeds/Powder",
+            "amount": "1 tblsp",
+            "swaps": [],
+            "id": "coriander"
+        },
+        {
+            "name": "Cumin Seeds/Powder",
+            "amount": "1 tblsp",
+            "swaps": [],
+            "id": "cumin"
+        },
+        {
+            "name": "Ground Black Pepper",
+            "amount": "1 tsp",
+            "swaps": [],
+            "id": "pepper"
+        },
+        {
+            "name": "Dried Fenugreek Leaves",
+            "amount": "1.5 tblsp",
+            "swaps": [ { "Fenugreek Seeds": "1 tblsp" } ],
+            "id": "fenugreek"
+        },
+        {
+            "name": "Cinamon Powder",
+            "amount": "1/2 tsp",
+            "swaps": [
+                { "Cassia Bark": "10g" },
+                { "sugar": "1/2 tsp" }
+            ],
+            "id": "cinamon"
+        },
+        {
+            "name": "Asfoetida",
+            "amount": "1/2 tblsp",
+            "swaps": [],
+            "id": "asfo"
+        },
+        {
+            "name": "Salt",
+            "amount": "3/4 tblsp",
+            "swaps": [],
+            "id": "salt"
+        },
+        {
+            "name": "Turmeric Powder",
+            "amount": "1/3 tblsp",
+            "swaps": [],
+            "id": "turmeric"
+        },
+        {
+            "name": "Hot Chilli Powder",
+            "amount": "1/3 tblsp",
+            "swaps": [ { "Chillie Flakes": "1/4 tblsp" } ],
+            "id": "chilliePowder"
+        },
+        {
+            "name": "Garam Masala",
+            "amount": "1/2 tblsp",
+            "swaps": [],
+            "id": "garam"
+        },
+        {
+            "name": "Fresh Spinach",
+            "amount": "200g",
+            "swaps": [],
+            "id": "spinach"
+        },
+        {
+            "name": "Chapattis",
+            "amount": "6",
+            "swaps": [
+                { "Garlic & Coriander Naan": "2" },
+                { "Peshwari Naan": "2" }
+            ],
+            "vegan": "Vegan Naan",
+            "veganAmount": 2,
+            "glutenFree": "Vegan Naan",
+            "glutenFreeAmount": 2,
+            "id": "naan"
+        }
+    ],
+  "methodSteps": [
+    "First, chop the {onion} and fry in half the {oil} for 5 minutes in a pan (big enough to hold the finished dish) on a medium heat until softened/carmelised, stirring every 30s. Be careful not to let the onion burn as this will taint the entire dish.",
+    "Next create a base mixture by blending the fried {onion} with half the {yog}, {garlic}, {ginger},a splash of cold water and quater of the {tomatos} until smooth.",
+    "Chop the {meat} into small cube shaped pieces (smaller pieces absorb more flavour) and add them to the pan which the onions were fried in with the remaining {oil}. Cook on a medium heat stirring regularly until the {meat} is sealed (5-10 minutes).",
+    "Now add the base mixture, the {salt}, and the {asfo} into the pan with the meat, cook on a low heat for 10 minutes.",
+    "Next add the {tomatos} to the pan and increase the heat to medium for 10 minutes, stir regularly.",
+    "Add the {coriander}, {cumin}, {turmeric}, {chilliePowder}, {cinamon}, {pepper} and {fenugreek} to the pan with a splash of cold water to prevent the spices from burning. Mix well and leave to simmer on a low heat for 10 minutes.",
+    "Whilst the mixture simmers, wash and chop the {spinach} and {chillies}, try to drain as much of the water out of the spinach as possible to speed up the cooking.",
+    "Once the 10 minutes has passed, add the {spinach} into the pan, increase the temperature to high and stir well for 5 minutes or until all the spinach has wilted, then reduce the temperature to low and cook for at least 10 minutes or until the excess liquid has boiled off.",
+    "Once the excess liquid has reduced, add the remaining {yog} and the {chillies} to the dish and cook on a medium heat for 5 minutes.",
+    "Heat the {naan} as described on the packet.",
+    "Finally, add the {freshCoriander} to the curry and stir well for 30s. Serve the curry then garnish it with {garam}, serve the {naan} on a seperate plate.",
+    "Enjoy!"
+  ]
+
+        }

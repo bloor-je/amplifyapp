@@ -7,8 +7,7 @@
     "\\src\\app\\indian",
     "\\src\\app\\indian\\recipes",
     "\\src\\app\\menu",
-    "\\src\\app\\slider",
-    "\\src\\external\\font-awesome"
+    "\\src\\app\\slider"
   ],
   "SelectedNode": "\\src\\app\\indian\\Indian.js",
   "PreviewInSolutionExplorer": false
